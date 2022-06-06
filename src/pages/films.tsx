@@ -39,17 +39,17 @@ const FilmsList: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </button>
         <button
           className={`md:p-2 rounded py-2 text-white p-2 ${
-            pageIndex === (data && data.meta.pagination.pageCount)
+            pageIndex === (data && data.meta?.pagination?.pageCount)
               ? "bg-gray-300"
               : "bg-blue-400"
           }`}
-          disabled={pageIndex === (data && data.meta.pagination.pageCount)}
+          disabled={pageIndex === (data && data.meta?.pagination?.pageCount)}
           onClick={() => setPageIndex(pageIndex + 1)}
         >
           Next
         </button>
         <span>{`${pageIndex} of ${
-          data && data.meta.pagination.pageCount
+          data && data.meta?.pagination?.pageCount
         }`}</span>
       </div>
     </Layout>
